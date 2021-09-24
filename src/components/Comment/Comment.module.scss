@@ -1,0 +1,18 @@
+.comment {
+	display: grid;
+	grid-template-columns: 1fr;
+	place-items: center;
+	gap: 0 20px;
+
+	img {
+		border-radius: 50%;
+	}
+
+	p {
+		margin: 0;
+		text-align: center;
+	}
+	blockquote {
+		font-size: 1.2rem;
+	}
+}
