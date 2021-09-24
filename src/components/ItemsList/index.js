@@ -14,6 +14,7 @@ class ItemsList extends Component {
 	componentDidMount() {
 		getData(ProductsEndPoint).then((data) => {
 			this.setState({ itemArray: data });
+			this.sortArray("Name");
 		});
 	}
 
@@ -93,12 +94,23 @@ class ItemsList extends Component {
 							Sort by
 							{sortOptions.map((option, index) => (
 								<label key={index}>
-									<input
-										type="radio"
-										name="sort"
-										value={option}
-										className="visually-hidden"
-									/>
+									{index === 0 ? (
+										<input
+											type="radio"
+											name="sort"
+											value={option}
+											className="visually-hidden"
+											defaultChecked
+										/>
+									) : (
+										<input
+											type="radio"
+											name="sort"
+											value={option}
+											className="visually-hidden"
+										/>
+									)}
+
 									<span>{option}</span>
 								</label>
 							))}
