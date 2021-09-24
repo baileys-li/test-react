@@ -6,6 +6,10 @@
 	height: 100%;
 	position: relative;
 
+	a {
+		margin-top: auto;
+	}
+
 	&::after {
 		position: absolute;
 		content: "";
@@ -42,23 +46,4 @@
 	margin: 0;
 
 	z-index: 1;
-}
-
-.link {
-	text-decoration: none;
-	background-color: tomato;
-	color: white;
-	text-align: center;
-	padding: 10px;
-	text-transform: uppercase;
-	margin-top: auto;
-
-	&:hover,
-	&:focus {
-		background-color: darken(tomato, 10%);
-	}
-
-	&:focus {
-		outline: none;
-	}
 }

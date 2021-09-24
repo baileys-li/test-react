@@ -1,5 +1,5 @@
 .items {
-    list-style: none;
+	list-style: none;
 	padding: 0;
 	margin: 0;
 
@@ -11,3 +11,106 @@
 	max-width: 1200px;
 	margin: 0 auto;
 }
+
+.header {
+	padding: 0 20px;
+	display: grid;
+
+	justify-content: center;
+	justify-items: center;
+	align-items: start;
+	align-content: start;
+	grid-auto-rows: auto;
+	margin: 20px 0;
+	gap: 15px 20px;
+
+	h1 {
+		grid-row-end: span 2;
+		margin: 0;
+	}
+
+	@media (min-width: 700px) {
+		grid-template-columns: auto auto;
+		justify-content: space-between;
+		justify-items: initial;
+	}
+
+	@media (min-width: 1000px) {
+		grid-template-columns: 1fr auto auto;
+		align-items: center;
+
+		h1 {
+			grid-row-end: auto;
+		}
+	}
+}
+
+.sort {
+	display: flex;
+	align-items: center;
+	accent-color: tomato;
+
+	label {
+		cursor: pointer;
+	}
+
+	&__sort {
+		display: flex;
+		// align-items: center;
+		margin: 0;
+
+		label:first-child {
+			margin-left: 10px;
+			display: block;
+		}
+
+		span {
+			display: inline-flex;
+			align-items: center;
+			margin: 0 5px;
+
+			&::before {
+				width: 20px;
+				height: 20px;
+				content: "";
+				display: block;
+				border-radius: 50%;
+				border: 1px solid currentColor;
+				margin-right: 10px;
+			}
+		}
+
+		input:focus-visible ~ span::before,
+		input:hover ~ span::before {
+			border-color: tomato;
+		}
+
+		input:checked ~ span::before {
+			background-image: radial-gradient(
+				circle,
+				tomato 40%,
+				transparent 40%
+			);
+		}
+	}
+
+	&__order {
+		font-size: 0;
+		margin-left: 15px;
+
+		svg {
+			opacity: 0.3;
+			margin: 0 5px;
+		}
+
+		input:checked ~ svg {
+			opacity: 1;
+		}
+
+		input:focus-visible ~ svg,
+		input:hover ~ svg {
+			fill: tomato;
+		}
+	}
+}
+

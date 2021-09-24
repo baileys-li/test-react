@@ -1,0 +1,18 @@
+.button {
+	text-decoration: none;
+	background-color: tomato;
+	color: white;
+	text-align: center;
+	padding: 10px;
+	text-transform: uppercase;
+	border-color: transparent;
+
+	&:hover,
+	&:focus {
+		background-color: darken(tomato, 10%);
+	}
+
+	&:focus {
+		outline: none;
+	}
+}

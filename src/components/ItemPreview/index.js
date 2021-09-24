@@ -16,7 +16,7 @@ class ItemPreview extends Component {
 					<p className={s.amount}>{item.amount} items left</p>
 				</div>
 
-				<Link to={`/item/${item.id}`} className={s.link}>
+				<Link to={`/item/${item.id}`} className="button">
 					More
 				</Link>
 			</article>
